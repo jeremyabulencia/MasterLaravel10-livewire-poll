@@ -82,4 +82,24 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     ```
         composer require livewire/livewire
     ```
-
+### Creating Models and Migrations
+#### configure database connection on .env file
+`.env`
+```php
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=livewire-poll
+    DB_USERNAME=root
+    DB_PASSWORD=
+```
+#### run migration to create database and initial tables
+```bash
+    php artisan migrate
+```
+#### Creating models with migration file
+```bash
+    php artisan make:model Poll -m
+    php artisan make:model Option -m
+    php artisan make:model Vote -m
+```
