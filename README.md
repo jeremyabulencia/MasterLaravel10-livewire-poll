@@ -64,3 +64,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+# Livewire Poll Laravel 10 Project
+## Setting Up
+### Laravel
+    ```bash
+        composer create-project --prefer-dist laravel/laravel livewire-poll
+    ```
+### Git
+    ```
+        git init
+        git remote add origin <remote repository>
+    ```
+### Livewire Library
+    ```
+        composer require livewire/livewire
+    ```
+
