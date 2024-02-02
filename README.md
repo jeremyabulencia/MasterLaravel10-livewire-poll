@@ -103,3 +103,43 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     php artisan make:model Option -m
     php artisan make:model Vote -m
 ```
+### Creating Livewire Component
+```bash
+    php artisan make:livewire CreatePoll
+```
+`App\Livewire\CreatePoll.php`
+```php
+    class CreatePoll extends Component
+    {
+        public $title;
+        
+        public function render()
+        {
+            return view('livewire.create-poll');
+        }
+    }
+```
+`create-poll.blade.php`
+```php
+    <div>
+        <form>
+            <label>Poll Title</label>
+
+            <input type="text" wire:model.live="title" />
+
+            Current Title: {{ $title }}
+        </form>
+    </div>
+```
+`app.blade.php`
+```php
+    <body class="container mx-auto mt-10 mb-10 max-w-lg">
+        @livewireScripts
+        
+        @livewire('create-poll')
+    </body>
+```
+```php
+    // wire:model (non real-time) to wire:model.live (real-time)
+    <input type="text" wire:model.live="title" />
+```
